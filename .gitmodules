@@ -1,6 +1,6 @@
 [submodule "docker-sickrage"]
 	path = docker-sickrage
-	url = ./docker-sickrage
+	url = git@github.com:dhensen/docker-sickrage.git
 [submodule "docker-transmission"]
 	path = docker-transmission
-	url = ./docker-transmission
+	url = git@github.com:dhensen/docker-transmission.git
