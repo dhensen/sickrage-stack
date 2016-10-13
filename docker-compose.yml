@@ -1,0 +1,29 @@
+version: '2'
+services:
+  sickrage:
+    build: ./docker-sickrage
+    ports:
+     - "8081:8081"
+    volumes:
+     - ./sickrage_config:/config
+     - ./data:/data
+    restart: always
+    depends_on:
+     - transmission
+    links:
+     - transmission
+
+  transmission:
+    build: ./docker-transmission
+    ports:
+     - "45555:45555"
+     - "9091:9091"
+    environment:
+      USERNAME: username
+      PASSWORD: password
+    volumes:
+     - ./data/download/watch:/watch
+     - ./data/download/complete:/downloads
+     - ./data/download/incomplete:/incomplete
+     - ./transmission_config:/config
+    restart: always

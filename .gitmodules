@@ -1,0 +1,6 @@
+[submodule "docker-sickrage"]
+	path = docker-sickrage
+	url = ./docker-sickrage
+[submodule "docker-transmission"]
+	path = docker-transmission
+	url = ./docker-transmission
