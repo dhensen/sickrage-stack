@@ -10,7 +10,7 @@ git clone git@github.com:dhensen/sickrage-stack.git
 cd sickrage-stack
 git submodule init
 git submodule update
-mkdir -p data/{complete,incomplete,series,watch}
+mkdir -p data/download/{complete,incomplete,series,watch}
 docker-compose up -d
 ```
 
