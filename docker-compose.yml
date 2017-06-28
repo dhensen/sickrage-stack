@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   sickrage:
     build: ./docker-sickrage
@@ -7,7 +7,7 @@ services:
     volumes:
      - ./sickrage_config:/config
      - ./data:/data
-    restart: always
+    restart: unless-stopped
     depends_on:
      - transmission
     links:
@@ -26,4 +26,4 @@ services:
      - ./data/download/complete:/downloads
      - ./data/download/incomplete:/incomplete
      - ./transmission_config:/config
-    restart: always
+    restart: unless-stopped
