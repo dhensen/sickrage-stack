@@ -1,12 +1,13 @@
 version: '3'
 services:
-  sickrage:
-    build: ./docker-sickrage
+  sickchill:
+    image: sickchill/sickchill:latest@sha256:656a9d25224ddb886116b992cf70e434513802a59fe8f18f6f94e0709a7b0aee
     ports:
      - "8081:8081"
     volumes:
-     - ./sickrage_config:/config
-     - ./data:/data
+     - ./data/data:/data
+     - ./data/download:/downloads
+     - ./data/tv:/tv
     restart: unless-stopped
     depends_on:
      - transmission
